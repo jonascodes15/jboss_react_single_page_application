@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base Reset ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: #111111;
+  color: #E8DCC8;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── Brutalist Grain Texture Overlay ────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.25;
+}
+
+/* ─── Scrollbar Styling ──────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #C0572A; border-radius: 0; }
+
+/* ─── Font Classes ───────────────────────────────────── */
+.font-display { font-family: 'Bebas Neue', sans-serif; }
+.font-mono { font-family: 'Space Mono', monospace; }
+
+/* ─── Brutalist Border ───────────────────────────────── */
+.border-raw {
+  border: 2px solid #C0572A;
+  box-shadow: 4px 4px 0px #C0572A;
+}
+
+.border-raw-amber {
+  border: 2px solid #D4892A;
+  box-shadow: 4px 4px 0px #D4892A;
+}
+
+/* ─── Stamp Effect ───────────────────────────────────── */
+.stamp {
+  display: inline-block;
+  border: 3px solid #C0572A;
+  padding: 2px 8px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C0572A;
+  transform: rotate(-2deg);
+}
+
+/* ─── Product Card Hover ─────────────────────────────── */
+.product-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.product-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0px #C0572A;
+}
+
+/* ─── WhatsApp Button Pulse ──────────────────────────── */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+}
+.whatsapp-pulse { animation: pulse-green 2s ease-in-out infinite; }
+
+/* ─── Section Divider Tape ───────────────────────────── */
+.tape-divider {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #C0572A 0px,
+    #C0572A 20px,
+    transparent 20px,
+    transparent 30px
+  );
+}
+
+/* ─── Image Frame Workshop ───────────────────────────── */
+.workshop-frame {
+  outline: 1px solid #3d3d3d;
+  outline-offset: 4px;
+}
+
+/* ─── Calculator Selector Active ─────────────────────── */
+.selector-btn {
+  transition: all 0.12s ease;
+  cursor: pointer;
+}
+.selector-btn.active {
+  background-color: #C0572A;
+  color: #E8DCC8;
+  border-color: #C0572A;
+  box-shadow: 3px 3px 0 #7a3118;
+}
+
+/* ─── Nav link underline ─────────────────────────────── */
+.nav-link {
+  position: relative;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #E8DCC8;
+  transition: color 0.15s;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -3px;
+  width: 0; height: 2px;
+  background: #C0572A;
+  transition: width 0.2s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+.nav-link.active { color: #C0572A; }
+
+/* ─── Modal Overlay ──────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.92);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(2px);
+}
+
+/* ─── Slide-up animation ─────────────────────────────── */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slide-up { animation: slide-up 0.35s ease forwards; }
+
+/* ─── Hero ticker ────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 18s linear infinite; white-space: nowrap; }
