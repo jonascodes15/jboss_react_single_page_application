@@ -131,7 +131,7 @@ export default function HomePage({ setActiveTab }) {
         <div style={{
           position: "relative",
           zIndex: 1,
-          padding: "clamp(2rem, 6vw, 5rem) clamp(1.5rem, 6vw, 5rem)",
+          padding: "clamp(6rem, 12vw, 9rem) clamp(1.5rem, 6vw, 5rem) clamp(2rem, 6vw, 5rem)",
           maxWidth: "760px",
         }}>
           {/* Stamp */}
