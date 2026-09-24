@@ -13,9 +13,9 @@ export default function Navbar({ activeTab, setActiveTab }) {
   }, []);
 
   const links = [
-    { key: "home",    label: "Home" },
+    { key: "home", label: "Home" },
     { key: "catalog", label: "Catalog" },
-    { key: "about",   label: "About" },
+    { key: "about", label: "About" },
     { key: "contact", label: "Contact" },
   ];
 
@@ -44,7 +44,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
           background: "none", border: "none", cursor: "pointer", padding: 0,
         }}>
           <img
-            src="/logo.png"
+            src="https://i.ibb.co/1G4PSQJM/logoo.jpg"
             alt="J-Boss Furnitures"
             style={{
               height: "42px",

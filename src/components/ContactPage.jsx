@@ -6,7 +6,7 @@ export default function ContactPage() {
   const [copied, setCopied] = useState(false);
 
   const handleWhatsApp = (msg) => {
-    const text = encodeURIComponent(msg || "Hi Jboss! I'd like to inquire about your furniture.");
+    const text = encodeURIComponent(msg || "Hi Jboss! I'd like to inquire about your furnitures.");
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
   };
 
@@ -165,8 +165,8 @@ export default function ContactPage() {
               },
               {
                 platform: "Instagram",
-                handle: "@jboss.furnitures",
-                url: "https://instagram.com/jboss.furnitures", // update this
+                handle: "@j_boss_furnitures",
+                url: "https://instagram.com/j_boss_furnitures", // update this
                 icon: "◎",
               },
             ].map((s) => (
@@ -220,7 +220,7 @@ export default function ContactPage() {
             LOCATION
           </p>
           <p style={{ color: "#a89880", fontSize: "0.9rem", lineHeight: "1.6" }}>
-            Workshop-based in <strong style={{ color: "#E8DCC8" }}>Lagos, Nigeria</strong>.
+            Workshop-based in <strong style={{ color: "#E8DCC8" }}> Ojo Alaba Int'l Market, Lagos, Nigeria</strong>.
             We deliver across Lagos State. Contact us about delivery to other states.
           </p>
         </div>

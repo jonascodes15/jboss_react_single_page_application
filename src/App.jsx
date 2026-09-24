@@ -10,6 +10,7 @@ import HomePage from "./components/HomePage";
 import CatalogPage from "./components/CatalogPage";
 import AboutPage from "./components/AboutPage";
 import ContactPage from "./components/ContactPage";
+import MaintenanceOverlay from "./components/MaintenanceOverlay";
 
 // AnnouncementBar is 36px tall. Navbar is ~60px tall.
 // Total offset for fixed elements = 96px.
@@ -21,9 +22,9 @@ export default function App() {
   const renderPage = () => {
     switch (activeTab) {
       case "catalog": return <CatalogPage />;
-      case "about":   return <AboutPage />;
+      case "about": return <AboutPage />;
       case "contact": return <ContactPage />;
-      default:        return <HomePage setActiveTab={setActiveTab} />;
+      default: return <HomePage setActiveTab={setActiveTab} />;
     }
   };
 
@@ -53,6 +54,9 @@ export default function App() {
 
       {/* Floating WhatsApp bubble */}
       <FloatingWhatsApp />
+
+      {/* Global maintenance overlay — blocks all pages */}
+      <MaintenanceOverlay />
     </div>
   );
 }

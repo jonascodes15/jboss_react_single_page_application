@@ -4,14 +4,14 @@
 import React, { useState, useEffect } from "react";
 
 const MESSAGES = [
-  "🏢  Outfitting an office or hotel? Ask about our corporate bulk discount packages.",
-  "🛋️  Every piece is built-to-order in our Lagos workshop — brick by brick.",
-  "⚡  Lead times: sofas 7–14 days · bed frames 12–16 days · chairs 5–7 days.",
-  "📲  WhatsApp us directly for custom dimensions and fabric samples.",
-  "🏢  Outfitting an office or hotel? Ask about our corporate bulk discount packages.",
-  "🛋️  Every piece is built-to-order in our Lagos workshop — brick by brick.",
-  "⚡  Lead times: sofas 7–14 days · bed frames 12–16 days · chairs 5–7 days.",
-  "📲  WhatsApp us directly for custom dimensions and fabric samples.",
+  " Outfitting an office or hotel? Ask about our corporate bulk discount packages.",
+  " Every piece is built-to-order in our Lagos workshop — brick by brick.",
+  " Lead times: sofas 7–14 days · bed frames 12–16 days · chairs 5–7 days.",
+  " WhatsApp us directly for custom dimensions and fabric samples.",
+  " Outfitting an office or hotel? Ask about our corporate bulk discount packages.",
+  " Every piece is built-to-order in our Lagos workshop — brick by brick.",
+  " Lead times: sofas 7–14 days · bed frames 12–16 days · chairs 5–7 days.",
+  " WhatsApp us directly for custom dimensions and fabric samples.",
 ];
 
 export default function AnnouncementBar() {

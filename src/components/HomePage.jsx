@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useCallback } from "react";
 import FeaturedProducts from "./FeaturedProducts";
 
-// ── Carousel images — replace with Jboss's real hosted photo URLs ──
+// ── Carousel images — 
 const CAROUSEL_IMAGES = [
   "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1400&q=85",
-  "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1400&q=85",
-  "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=1400&q=85",
-  "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=1400&q=85",
-  "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=1400&q=85",
+  "https://i.ibb.co/5W31tvZ0/jbcarousel2.jpg",
+  "https://i.ibb.co/8LYDP9Hs/jbcarousel3.jpg",
+  "https://i.ibb.co/0VzmLRJL/jbcarousel4.jpg",
+  "https://i.ibb.co/nN8FwcSq/jbcarousel5.jpg",
 ];
 
 // ── Background carousel (no text, pure visual behind hero copy) ──
@@ -48,7 +48,7 @@ function BackgroundCarousel() {
       {/* Dark gradient so left-side text stays readable */}
       <div style={{
         position: "absolute", inset: 0,
-        background: "linear-gradient(to right, rgba(14,14,14,0.92) 45%, rgba(14,14,14,0.3) 100%)",
+        background: "linear-gradient(to right, rgba(14,14,14,0.85) 45%, rgba(14,14,14,0.15) 100%)",
       }} />
       {/* Bottom fade */}
       <div style={{
@@ -77,27 +77,27 @@ function BackgroundCarousel() {
 // ── SVG Icons ─────────────────────────────────────────────────────
 const IconMaterials = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="2" y="20" width="28" height="5" rx="1" stroke="#D4892A" strokeWidth="1.8" fill="none"/>
-    <rect x="5" y="14" width="22" height="5" rx="1" stroke="#D4892A" strokeWidth="1.8" fill="none"/>
-    <rect x="8" y="8" width="16" height="5" rx="1" stroke="#D4892A" strokeWidth="1.8" fill="none"/>
-    <line x1="16" y1="4" x2="16" y2="8" stroke="#D4892A" strokeWidth="1.8" strokeLinecap="round"/>
+    <rect x="2" y="20" width="28" height="5" rx="1" stroke="#D4892A" strokeWidth="1.8" fill="none" />
+    <rect x="5" y="14" width="22" height="5" rx="1" stroke="#D4892A" strokeWidth="1.8" fill="none" />
+    <rect x="8" y="8" width="16" height="5" rx="1" stroke="#D4892A" strokeWidth="1.8" fill="none" />
+    <line x1="16" y1="4" x2="16" y2="8" stroke="#D4892A" strokeWidth="1.8" strokeLinecap="round" />
   </svg>
 );
 const IconCustom = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="16,3 29,27 3,27" stroke="#D4892A" strokeWidth="1.8" fill="none" strokeLinejoin="round"/>
-    <line x1="16" y1="3" x2="16" y2="27" stroke="#D4892A" strokeWidth="1.2" strokeDasharray="2 2"/>
-    <line x1="3" y1="27" x2="29" y2="27" stroke="#D4892A" strokeWidth="1.2" strokeDasharray="2 2"/>
-    <circle cx="16" cy="3" r="1.5" fill="#D4892A"/>
-    <circle cx="3" cy="27" r="1.5" fill="#D4892A"/>
-    <circle cx="29" cy="27" r="1.5" fill="#D4892A"/>
+    <polygon points="16,3 29,27 3,27" stroke="#D4892A" strokeWidth="1.8" fill="none" strokeLinejoin="round" />
+    <line x1="16" y1="3" x2="16" y2="27" stroke="#D4892A" strokeWidth="1.2" strokeDasharray="2 2" />
+    <line x1="3" y1="27" x2="29" y2="27" stroke="#D4892A" strokeWidth="1.2" strokeDasharray="2 2" />
+    <circle cx="16" cy="3" r="1.5" fill="#D4892A" />
+    <circle cx="3" cy="27" r="1.5" fill="#D4892A" />
+    <circle cx="29" cy="27" r="1.5" fill="#D4892A" />
   </svg>
 );
 const IconWorkshop = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 26 L14 10 L16 14 L20 6 L26 26" stroke="#D4892A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-    <line x1="4" y1="26" x2="28" y2="26" stroke="#D4892A" strokeWidth="1.8" strokeLinecap="round"/>
-    <circle cx="20" cy="6" r="2" stroke="#D4892A" strokeWidth="1.5" fill="none"/>
+    <path d="M6 26 L14 10 L16 14 L20 6 L26 26" stroke="#D4892A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <line x1="4" y1="26" x2="28" y2="26" stroke="#D4892A" strokeWidth="1.8" strokeLinecap="round" />
+    <circle cx="20" cy="6" r="2" stroke="#D4892A" strokeWidth="1.5" fill="none" />
   </svg>
 );
 
@@ -131,7 +131,7 @@ export default function HomePage({ setActiveTab }) {
         <div style={{
           position: "relative",
           zIndex: 1,
-          padding: "clamp(6rem, 12vw, 9rem) clamp(1.5rem, 6vw, 5rem) clamp(2rem, 6vw, 5rem)",
+          padding: "clamp(8rem, 14vw, 9rem) clamp(1.5rem, 6vw, 5rem) clamp(2rem, 6vw, 5rem)",
           maxWidth: "760px",
         }}>
           {/* Stamp */}
@@ -199,8 +199,8 @@ export default function HomePage({ setActiveTab }) {
               display: "flex", alignItems: "center", gap: "8px",
             }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.126 1.526 5.858L.057 23.428a.5.5 0 0 0 .609.61l5.703-1.49A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.658-.5-5.186-1.373l-.37-.215-3.861 1.01 1.019-3.75-.228-.382A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.126 1.526 5.858L.057 23.428a.5.5 0 0 0 .609.61l5.703-1.49A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.658-.5-5.186-1.373l-.37-.215-3.861 1.01 1.019-3.75-.228-.382A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
               </svg>
               WhatsApp Jboss
             </button>
@@ -215,7 +215,7 @@ export default function HomePage({ setActiveTab }) {
           }}>
             {[
               { num: "100+", label: "Pieces Delivered" },
-              { num: "3+",   label: "Years Building" },
+              { num: "3+", label: "Years Building" },
               { num: "100%", label: "Handcrafted" },
             ].map((s) => (
               <div key={s.label}>
@@ -233,7 +233,7 @@ export default function HomePage({ setActiveTab }) {
         borderTop: "2px solid #7a3118", borderBottom: "2px solid #7a3118",
       }}>
         <div className="marquee-track" style={{ display: "flex", gap: "3rem" }}>
-          {Array(6).fill(["CUSTOM SOFAS","HANDCRAFTED","LAGOS MADE","QUALITY FOAM","PREMIUM FABRIC","OFFICE CHAIRS","BED FRAMES","BRICK BY BRICK"]).flat().map((t, i) => (
+          {Array(6).fill(["CUSTOM SOFAS", "HANDCRAFTED", "LAGOS MADE", "QUALITY FOAM", "PREMIUM FABRIC", "OFFICE CHAIRS", "BED FRAMES", "BRICK BY BRICK"]).flat().map((t, i) => (
             <span key={i} style={{
               fontFamily: "'Bebas Neue', sans-serif", color: "#E8DCC8",
               letterSpacing: "0.2em", fontSize: "1rem", whiteSpace: "nowrap",
@@ -258,8 +258,8 @@ export default function HomePage({ setActiveTab }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", border: "1px solid #2e2e2e" }}>
             {[
               { icon: <IconMaterials />, title: "REAL MATERIALS", body: "We use solid hardwood frames and high-density foam. The kind that doesn't collapse after three months." },
-              { icon: <IconCustom />,    title: "CUSTOM TO YOUR SPACE", body: "Every piece can be sized to your room. Share your dimensions and we'll build around them." },
-              { icon: <IconWorkshop />,  title: "WORKSHOP HONEST", body: "Our photos are real workshop shots — no studio filters, no fake mockups. What you see is what you get." },
+              { icon: <IconCustom />, title: "CUSTOM TO YOUR SPACE", body: "Every piece can be sized to your room. Share your dimensions and we'll build around them." },
+              { icon: <IconWorkshop />, title: "WORKSHOP HONEST", body: "Our photos are real workshop shots — no studio filters, no fake mockups. What you see is what you get." },
             ].map((card, i) => (
               <div key={i} style={{
                 padding: "2rem",

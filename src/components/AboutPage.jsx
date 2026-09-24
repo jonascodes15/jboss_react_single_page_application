@@ -36,7 +36,7 @@ export default function AboutPage() {
             style={{ background: "#0e0e0e", borderRight: "1px solid #2e2e2e" }}
           >
             <img
-              src="https://images.unsplash.com/photo-1616137422495-1e9e46e2aa1e?w=600&q=80"
+              src="https://i.ibb.co/j9dCRRkq/IMG-2063.jpg"
               alt="Workshop"
               className="w-full h-full object-cover opacity-60"
               style={{ minHeight: "300px" }}

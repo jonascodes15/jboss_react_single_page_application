@@ -39,10 +39,12 @@ export default function NewsletterPopup() {
       // See the README for how to connect Formspree, Mailchimp, etc.
       // Replace the block below with your chosen provider's fetch call.
       // ─────────────────────────────────────────────────────────
-      console.log("New subscriber:", email);
-
-      // Simulate network delay for UX feedback
-      await new Promise((r) => setTimeout(r, 800));
+      const res = await fetch("https://formspree.io/f/maqzgkaq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("Failed");
 
       // On success:
       setStatus("success");
@@ -139,7 +141,7 @@ export default function NewsletterPopup() {
               borderLeft: "2px solid #C0572A", paddingLeft: "0.875rem",
             }}>
               Join the inner circle. Drop your email to unlock <strong style={{ color: "#E8DCC8" }}>5% off your first
-              bespoke order</strong> and get exclusive early access to our seasonal catalog drops.
+                bespoke order</strong> and get exclusive early access to our seasonal catalog drops.
             </p>
 
             {/* Email input */}
